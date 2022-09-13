@@ -1,0 +1,55 @@
+.select {
+    text-align: center;
+    width: 150px;
+    height: 36px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    margin: 8px 0 8px 0;
+}
+
+.cntnav {
+    width: 200px;
+    height: calc(100vh - 134px);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    margin: 8px;
+}
+
+.cntselect {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.btnreload {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.btnreload:hover {
+    cursor: pointer;
+}

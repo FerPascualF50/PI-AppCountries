@@ -1,0 +1,55 @@
+.link {
+    text-decoration: none;
+}
+
+.card {
+    text-align: center;
+    width: 180px;
+    height: 220px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    font-family: inherit;
+    border-radius: 10px;
+    justify-content: center;
+    position: relative;
+    margin: 4px;
+}
+
+.card h3 {
+    font-family: inherit;
+    color: wheat;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 0;
+    line-height: 1.2;
+}
+
+.card h5 {
+    font-family: inherit;
+    color: white;
+    font-size: 12px;
+    margin: 10px auto;
+    max-width: 330px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.card Link {
+    text-decoration: none;
+}
+
+.card .image {
+    padding-top: 20px;
+    border-radius: 4px;
+    width: 100px;
+    height: fit-content;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

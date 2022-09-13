@@ -1,0 +1,18 @@
+.cntheader{
+    height: 70px;
+    display: flex;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0,0.65);
+    align-items: center;  
+    justify-content: space-between;
+    padding: 0 16px;  
+}
+
+.linkheader{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    font-family: inherit;
+}

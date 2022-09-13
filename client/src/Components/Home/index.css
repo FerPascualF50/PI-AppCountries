@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    background-image: url(playa.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-nav {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.content-card {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 6px;
+    align-content: flex-start;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}

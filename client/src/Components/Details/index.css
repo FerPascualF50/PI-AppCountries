@@ -1,0 +1,82 @@
+.detailbg {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(playa.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-detail {
+    display: flex;
+
+}
+
+.imgdetail {
+    width: 250px;
+    height: 150px;
+    border-radius: 20xp;
+}
+
+.cntdetail {
+    width: 400px;
+    height: 400px;
+    text-decoration: none;
+    display: flex;
+    border-radius: 20px;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+.container-activity {
+    display: flex;
+}
+
+.cntactivity {
+    width: 200px;
+    height: 100px;
+    text-decoration: none;
+    display: flex;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+    padding-top: 15px;
+}
+
+.btndetail {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.7);
+    margin: 16px;
+    margin-bottom: 0px;
+}
+
+.btndetail:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
