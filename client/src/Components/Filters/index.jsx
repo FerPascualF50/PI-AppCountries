@@ -4,22 +4,22 @@ import { getAllCountries, getActivity } from '../../Redux/Action'
 import './index.css'
 
 
-export default function Filters({byName, byPopulation, byContinent, byActivities}) {
-    const dispatch = useDispatch()
+export default function Filters({ byName, byPopulation, byContinent, byActivities }) {
+  const dispatch = useDispatch()
 
-    function handleClick(e) {
-      e.preventDefault()
-      dispatch(getAllCountries())
-    }
+  function handleClick(e) {
+    e.preventDefault()
+    dispatch(getAllCountries())
+  }
 
-    useEffect(() => {
-        dispatch(getAllCountries())
-      }, [dispatch])
+  useEffect(() => {
+    dispatch(getAllCountries())
+  }, [dispatch])
 
-      const allActivities = useSelector((state) => state.activities);
-      useEffect(()=>{
-        dispatch(getActivity())
-      }, [dispatch]);
+  const allActivities = useSelector((input) => input.activities);
+  useEffect(() => {
+    dispatch(getActivity())
+  }, [dispatch]);
 
 
 
@@ -29,7 +29,7 @@ export default function Filters({byName, byPopulation, byContinent, byActivities
       <div className='cntselect'>
         <h3>Order by...</h3>
         <select className='select' onChange={(e) => byContinent(e)}>
-          <option value="All" key='All'>Continent</option>
+          <option value="All" key='All' disabled selected >Continent</option>
           <option value="Africa" key='Africa'>Africa</option>
           <option value="Americas" key='Americas'>America</option>
           <option value="Antarctic" key='Antarctic'>Antarctic</option>
@@ -38,18 +38,18 @@ export default function Filters({byName, byPopulation, byContinent, byActivities
           <option value="Oceania" key='Oceania'>Oceania</option>
         </select>
         <select className='select' onChange={(e) => byName(e)}>
-          <option value="alpha" key='alpha'>Alphabetically</option>
-          <option value="asc" key='asc'>A to Z</option>
-          <option value="desc" key='desc'>Z to A</option>
+          <option value="alpha" key='alpha' disabled selected >Alphabetically</option>
+          <option value='A to Z' key='A to Z'>A to Z</option>
+          <option value='Z to A' key='Z to A'>Z to A</option>
         </select>
         <select className='select' onChange={(e) => byPopulation(e)}>
-          <option value="order" key='order'>Population</option>
-          <option value="population asc" key='population asc'>Upward</option>
-          <option value="population desc" key='population desc' >Falling</option>
+          <option value='order' key='order' disabled selected >Population</option>
+          <option value='Upward' key='Upward'>Upward</option>
+          <option value='Falling' key='Falling' >Falling</option>
         </select>
         <h3>With...</h3>
-        <select className='select' onChange={(e) => byActivities(e)}>
-          <option value='All'>Activities</option>
+        <select className='select' onChange={(el) => byActivities(el)}>
+          <option value='All' disabled selected>Activities</option>
           {allActivities?.map((e) => { return <option key={e.id} value={e.name}>{e.name}</option> })}
         </select>
       </div>

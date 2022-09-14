@@ -38,8 +38,6 @@ const rootReducer = (state = initialState, action) => {
                 activities: action.payload
             };
 
-
-
         case 'POST_ACTIVITY':
             return {
                 ...state,
@@ -47,23 +45,16 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case 'FILTER_ACTIVITY':
+            
+            const allCountriesAct = state.allCountries
+            const activitiesFilter = action === 'All' ?
+            allCountriesAct : allCountriesAct.filter(e => 
+                e.activities && e.activities.map(e => e.name).includes(action.payload))
 
-            // al menos una actividad
-            const actFiltered = state.countries.filter((count) => { return count.activities.length > 0 })
-            const activities = [];
-
-            const filterActivities = action.payload === 'All' ? state.countries : activities;
-            for (let i = 0; i < actFiltered.length; i++) {
-                for (let j = 0; j < actFiltered[i].activities.length; j++) {
-                    if (actFiltered[i].activities[j].name === action.payload) {
-                        activities.push(actFiltered[i])
-                    }
-                }
-            }
-            return {
+            return{
                 ...state,
-                countries: filterActivities
-            };
+                countries: activitiesFilter
+            }     
 
         case 'FILTER_BY_CONTINENT':
             const allCountries = state.allCountries
@@ -76,7 +67,7 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case 'ORDER_BY_NAME':
-            let countriesByName = action.payload === 'asc' ?
+            let countriesByName = action.payload === 'A to Z' ?
                 state.countries.sort((a, b) => {
                     if (a.name > b.name) return 1;
                     if (a.name < b.name) return -1;
@@ -93,7 +84,7 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case 'ORDER_BY_POPULATION':
-            let countriesByPopulation = action.payload === 'population asc'
+            let countriesByPopulation = action.payload === 'Upward'
                 ? state.countries.sort((a, b) => a.population - b.population)
                 : state.countries.sort((a, b) => b.population - a.population)
             return {

@@ -42,7 +42,7 @@ export default function CardActivityCreator() {
   }
 
   const handleChange = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setInput({
       ...input,
       [e.target.name]: e.target.value
@@ -65,15 +65,14 @@ export default function CardActivityCreator() {
     dispatch(getAllCountries())
   }, [dispatch])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  function handleSubmit(e){
     if (!input.name) alert('Name is need')
     else if (!input.difficulty) alert('Chose difficulty.')
     else if (!input.duration) alert('Chose a duration.')
     else if (!input.season) alert('Chose a season.')
     else if (!input.countries) alert('Chose a country.')
     else {
+      e.preventDefault();
       setErrors(validate({
         ...input,
         [e.target.name]: e.target.value
@@ -91,6 +90,7 @@ export default function CardActivityCreator() {
       navigate('/home')
     }
   }
+  
 
   function handleDelete(e) {
     setInput({
@@ -120,8 +120,8 @@ export default function CardActivityCreator() {
 
         <div>
           <label>Difficulty</label>
-          <select className='selectcreate' value={input.difficulty} onChange={(e) => handleDifficulty(e)}>
-            <option key={'difficulty'}>Select</option>
+          <select className='selectcreate' onChange={(e) => handleDifficulty(e)}>
+            <option key={'difficulty'} disabled selected >Select</option>
             <option value={1} key={'1'}>1</option>
             <option value={2} key={'2'}>2</option>
             <option value={3} key={'3'}>3</option>
@@ -133,7 +133,7 @@ export default function CardActivityCreator() {
         <div>
           <label>Duration</label>
           <select className='selectcreate' onChange={(e) => handleDuration(e)}>
-            <option key={'duration'}>Select</option>
+            <option key={'duration'} disabled selected>Select</option>
             <option value={'1hr'} key={'1hr'}>1 hr.</option>
             <option value={'2hs'} key={'2hs'}>2 hs.</option>
             <option value={'3hs'} key={'3hs'}>3 hs.</option>
@@ -145,7 +145,7 @@ export default function CardActivityCreator() {
         <div>
           <label>Season</label>
           <select className='selectcreate' onChange={(e) => handleSeason(e)}>
-            <option key={'season'}>Select</option>
+            <option key={'season'} disabled selected>Select</option>
             <option value={'Summer'} key={'Summer'}>Summer</option>
             <option value={'Fall'} key={'Fall'}>Fall</option>
             <option value={'Winter'} key={'Winter'}>Winter</option>
@@ -155,7 +155,7 @@ export default function CardActivityCreator() {
         <div>
           <label>Countries</label>
           <select className='selectcreate' onChange={(e) => handleCountry(e)}>
-            <option key={'Country'}>Select</option>
+            <option key={'Country'} disabled selected>Select</option>
             {countries.map((country) => (
               <option value={country.id} key={country.id}>{country.name}</option>
             ))}
