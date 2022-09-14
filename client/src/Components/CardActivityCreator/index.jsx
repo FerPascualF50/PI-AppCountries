@@ -80,7 +80,7 @@ export default function CardActivityCreator() {
       }))
 
       dispatch(postActivity(input));
-      alert('Congratulations...activity created!')
+      alert('Congratulations... activity created!')
       setInput({
         name: '',
         difficulty: '',
@@ -92,7 +92,7 @@ export default function CardActivityCreator() {
     }
   }
 
-  const handleDelete = (e) => {
+  function handleDelete(e) {
     setInput({
       ...input,
       countries: input.countries.filter((country) => country !== e)
