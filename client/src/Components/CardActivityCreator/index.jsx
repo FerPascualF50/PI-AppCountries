@@ -19,14 +19,7 @@ export default function CardActivityCreator() {
     countries: []
   })
 
-  function handleSeason(e) {
-    setInput({
-      ...input,
-      season: e.target.value
-    })
-  }
-
-  const handleDifficulty = (e) => {
+  function handleDifficulty(e) {
     e.preventDefault();
     setInput({
       ...input,
@@ -35,14 +28,31 @@ export default function CardActivityCreator() {
   }
 
   function handleDuration(e) {
+    e.preventDefault();
     setInput({
       ...input,
       duration: e.target.value
     })
   }
 
-  const handleChange = (e) => {
-    //e.preventDefault();
+  function handleSeason(e) {
+    e.preventDefault();
+    setInput({
+      ...input,
+      season: e.target.value
+    })
+  }
+
+  function handleCountry(e) {
+    e.preventDefault();
+    setInput({
+      ...input,
+      countries: [...input.countries, e.target.value]
+    })
+  }
+
+  function handleChange(e) {
+    e.preventDefault();
     setInput({
       ...input,
       [e.target.name]: e.target.value
@@ -53,24 +63,16 @@ export default function CardActivityCreator() {
     }))
   }
 
-  const handleCountry = (e) => {
-    e.preventDefault();
-    setInput({
-      ...input,
-      countries: [...input.countries, e.target.value]
-    })
-  }
-
   useEffect(() => {
     dispatch(getAllCountries())
   }, [dispatch])
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     if (!input.name) alert('Name is need')
     else if (!input.difficulty) alert('Chose difficulty.')
     else if (!input.duration) alert('Chose a duration.')
     else if (!input.season) alert('Chose a season.')
-    else if (!input.countries) alert('Chose a country.')
+    else if (!input.countries.length) alert('Chose a country.')
     else {
       e.preventDefault();
       setErrors(validate({
@@ -90,7 +92,6 @@ export default function CardActivityCreator() {
       navigate('/home')
     }
   }
-  
 
   function handleDelete(e) {
     setInput({
@@ -98,7 +99,6 @@ export default function CardActivityCreator() {
       countries: input.countries.filter((country) => country !== e)
     })
   }
-
 
   return (
     <div className='createbg'>
@@ -161,7 +161,7 @@ export default function CardActivityCreator() {
             ))}
           </select>
 
-          {errors.name || !input.name || !input.countries
+          {errors.name || !input.name || !input.difficulty || !input.duration || !input.season || !input.countries.length
             ? <button className='btncreate' type="submit" disabled={true}>CREATE</button>
             : <button className='btncreate' type="submit">CREATE</button>}
           {errors.name && (<p>{errors.name}</p>)}

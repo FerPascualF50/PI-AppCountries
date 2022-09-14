@@ -13,5 +13,4 @@ const getActivities = async (req, res) => {
         res.status(404).json(error)
     }
 }
-console.log(getActivities.activities)
 module.exports = { getActivities }
