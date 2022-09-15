@@ -17,6 +17,15 @@ describe('Country model', () => {
       it('should work when its a valid name', () => {
         Country.create({ name: 'Colombia' });
       });
+      it('should found when its a valid name', () => {
+        Country.findOrCreate({ name: 'Argentina' });
+      });
+      it('should work when its a valid capital', () => {
+        Country.create({ capital: 'Lima' });
+      });
+      it('should work when its a valid continent', () => {
+        Country.create({ continent: 'America' });
+      });
     });
   });
 });
