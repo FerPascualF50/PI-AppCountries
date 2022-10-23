@@ -6,6 +6,7 @@ const getCountries = require('./getCountries.js')
 const getCountryId = require('./getCountryId.js')
 const postActivity = require('./postActivity.js')
 const getActivities = require('./getActivities.js')
+const delActivity = require('./delActivity.js')
 
 const router = Router();
 
@@ -15,5 +16,6 @@ router.use('/countries', getCountryId)
 router.use('/countries', getCountries)
 router.use('/activity', postActivity)
 router.use('/activity', getActivities)
+router.use('/delactivity', delActivity)
 
 module.exports = router;
