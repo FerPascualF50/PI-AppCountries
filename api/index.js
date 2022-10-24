@@ -26,6 +26,6 @@ const { getApiInfo } = require('./src/getApiInfo/getApiInfo.js');
 conn.sync({ force: true }).then(getApiInfo)
 .then(() => {
   server.listen(process.env.PORT, () => {
-    console.log(`Server Up ok - listening at ${PORT}`); // eslint-disable-line no-console
+    console.log(`Server Up ok - listening at 3001`); // eslint-disable-line no-console
   });
 });
