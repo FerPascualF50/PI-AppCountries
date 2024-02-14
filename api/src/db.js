@@ -30,8 +30,8 @@ let sequelize =
     })
     : new Sequelize(
       //`postgres://postgres123:aYAZuOTOfdh1U3rVHMx6LXPYK4FgrcRY@dpg-cn62heqcn0vc73daaapg-a.oregon-postgres.render.com/dbcountry_i6p6`
-      `postgres://postgres123:aYAZuOTOfdh1U3rVHMx6LXPYK4FgrcRY@dpg-cn62heqcn0vc73daaapg-a/dbcountry_i6p6`
-      //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/appcountries`,
+      //`postgres://postgres123:aYAZuOTOfdh1U3rVHMx6LXPYK4FgrcRY@dpg-cn62heqcn0vc73daaapg-a/dbcountry_i6p6`
+      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dbcountry_i6p6`,
       { logging: false, native: false }
     );
 
