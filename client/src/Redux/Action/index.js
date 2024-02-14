@@ -7,21 +7,21 @@ export const getAllCountries = () => (dispatch) => {
 };
 
 export const getCountryByName = (name) => (dispatch) => {
-    return axios.get(`https://picountriesbackend.onrender.com/countries?name=${name}`)
+    return axios.get(`/countries?name=${name}`)
         .then((info) => { return dispatch({ type: 'GET_COUNTRY_NAME', payload: info.data }) })
         .catch((error) => console.log(error))
 };
 
 
 export const getCountryById = (id) => async (dispatch) => {
-    return axios.get(`https://picountriesbackend.onrender.com/countries/${id}`)
+    return axios.get(`/countries/${id}`)
         .then(info => dispatch({ type: 'GET_COUNTRY_ID', payload: info.data }))
         .catch(error => dispatch({ type: 'GET_COUNTRY_ID', payload: { error } }))
 }
 
 
 export const getActivity = () => (dispatch) => {
-    return axios.get(`https://picountriesbackend.onrender.com/activity/all`)
+    return axios.get(`/activity/all`)
         .then((info) => dispatch({ type: 'GET_ACTIVITY', payload: info.data }))
         .catch((error) => console.log(error))
 };
@@ -29,7 +29,7 @@ export const getActivity = () => (dispatch) => {
 export function postActivity(body) {
     return async function (dispatch) {
         try {
-            var activity = await axios.post(`https://picountriesbackend.onrender.com/activity`, body);
+            var activity = await axios.post(`/activity`, body);
             return dispatch({
                 type: 'POST_ACTIVITY',
                 payload: activity.data
