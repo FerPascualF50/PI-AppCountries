@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const getAllCountries = () => (dispatch) => {
-    return axios.get('/countries')
+    return axios.get('https://picountriesbackend.onrender.com/countries')
         .then((info) => dispatch({ type: 'GET_ALL_COUNTRIES', payload: info.data }))
         .catch((error) => console.log(error))
 };
