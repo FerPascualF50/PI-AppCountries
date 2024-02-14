@@ -29,7 +29,8 @@ let sequelize =
       ssl: true,
     })
     : new Sequelize(
-      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/appcountries`,
+      `postgres://postgres123:aYAZuOTOfdh1U3rVHMx6LXPYK4FgrcRY@dpg-cn62heqcn0vc73daaapg-a.oregon-postgres.render.com/dbcountry_i6p6`
+      //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/appcountries`,
       { logging: false, native: false }
     );
 
